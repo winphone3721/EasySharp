@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySharp.Proxy", "EasySharp.Proxy\EasySharp.Proxy.csproj", "{909A1CBB-9A89-468B-8D66-14CB498574F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySharp.Proxy", "EasySharp.Proxy\EasySharp.Proxy.csproj", "{909A1CBB-9A89-468B-8D66-14CB498574F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySharp.Proxy.Service", "EasySharp.Proxy.Service\EasySharp.Proxy.Service.csproj", "{D85CD1DD-60A5-4FCE-A40D-327333BB2D11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySharp.Proxy.Test", "EasySharp.Proxy.Test\EasySharp.Proxy.Test.csproj", "{FDB745D5-3CC6-4FC7-9E53-9CEB511C29F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySharp.Proxy.XUnitTest", "EasySharp.Proxy.XUnitTest\EasySharp.Proxy.XUnitTest.csproj", "{2A080E56-13EB-48C1-8FC9-8DBA7323B986}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{909A1CBB-9A89-468B-8D66-14CB498574F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{909A1CBB-9A89-468B-8D66-14CB498574F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{909A1CBB-9A89-468B-8D66-14CB498574F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D85CD1DD-60A5-4FCE-A40D-327333BB2D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D85CD1DD-60A5-4FCE-A40D-327333BB2D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D85CD1DD-60A5-4FCE-A40D-327333BB2D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D85CD1DD-60A5-4FCE-A40D-327333BB2D11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDB745D5-3CC6-4FC7-9E53-9CEB511C29F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB745D5-3CC6-4FC7-9E53-9CEB511C29F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB745D5-3CC6-4FC7-9E53-9CEB511C29F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB745D5-3CC6-4FC7-9E53-9CEB511C29F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A080E56-13EB-48C1-8FC9-8DBA7323B986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A080E56-13EB-48C1-8FC9-8DBA7323B986}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A080E56-13EB-48C1-8FC9-8DBA7323B986}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A080E56-13EB-48C1-8FC9-8DBA7323B986}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
