@@ -17,7 +17,7 @@ namespace EasySharp.Proxy.Service.Service
             {
                 return "【中文-世界，你好！】";
             }
-            return string.Empty;
+            return "这里是中文，其它语言无效！";
 
         }
     }

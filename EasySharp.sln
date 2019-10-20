@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySharp.Proxy.Test", "Eas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySharp.Proxy.XUnitTest", "EasySharp.Proxy.XUnitTest\EasySharp.Proxy.XUnitTest.csproj", "{2A080E56-13EB-48C1-8FC9-8DBA7323B986}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasySharp.Logger.Interceptor", "EasySharp.Logger.Interceptor\EasySharp.Logger.Interceptor.csproj", "{D99B2DA2-AC03-462C-BCA7-4ECBE36F2034}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySharp.Logger.Interceptor", "EasySharp.Logger.Interceptor\EasySharp.Logger.Interceptor.csproj", "{D99B2DA2-AC03-462C-BCA7-4ECBE36F2034}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

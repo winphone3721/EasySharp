@@ -1,4 +1,5 @@
-﻿using EasySharp.Proxy.Service.Service;
+﻿using EasySharp.Proxy.EventArg;
+using EasySharp.Proxy.Service.Service;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -22,23 +23,23 @@ namespace EasySharp.Proxy
         public class InvokeProxy<V> : DispatchProxy
            where V : class
         {
-            private Predicate<MethodInfo> _filter;
+            private Predicate<ProxyEventArgs> _filter;
 
-            public event EventHandler<MethodInfo> BeforeExecute;
-            public event EventHandler<MethodInfo> AfterExecute;
-            public event EventHandler<MethodInfo> ErrorExecuting;
+            public event EventHandler<ProxyEventArgs> BeforeExecute;
+            public event EventHandler<ProxyEventArgs> AfterExecute;
+            public event EventHandler<ProxyEventArgs> ErrorExecuting;
 
             private readonly V _decorated;
             private readonly Type _decoratedType;
             public InvokeProxy()
             {
                 _decoratedType = typeof(V);
-                //toString();
+
                 _decorated = (V)_decoratedType.Assembly.CreateInstance(_decoratedType.FullName);
 
                 Filter = m => true;
             }
-            public Predicate<MethodInfo> Filter
+            public Predicate<ProxyEventArgs> Filter
             {
                 get { return _filter; }
                 set
@@ -50,16 +51,15 @@ namespace EasySharp.Proxy
                 }
             }
 
-            private void OnBeforeExecute(MethodInfo methodInfo)
+            private void OnBeforeExecute(ProxyEventArgs proxyEventArgs)
             {
                 if (BeforeExecute != null)
-                {
-
-                    if (_filter(methodInfo))
-                        BeforeExecute(this, methodInfo);
+                {                    
+                    if (_filter(proxyEventArgs))
+                        BeforeExecute(this, proxyEventArgs);
                 }
             }
-            private void OnAfterExecute(MethodInfo methodInfo)
+            private void OnAfterExecute(ProxyEventArgs methodInfo)
             {
                 if (AfterExecute != null)
                 {
@@ -67,7 +67,7 @@ namespace EasySharp.Proxy
                         AfterExecute(this, methodInfo);
                 }
             }
-            private void OnErrorExecuting(MethodInfo methodInfo)
+            private void OnErrorExecuting(ProxyEventArgs methodInfo)
             {
                 if (ErrorExecuting != null)
                 {
@@ -77,16 +77,16 @@ namespace EasySharp.Proxy
             }
             protected override object Invoke(MethodInfo methodInfo, object[] args)
             {
-                OnBeforeExecute(methodInfo);
+                OnBeforeExecute(new ProxyEventArgs(methodInfo,args));
                 try
                 {
                     var result = _decoratedType.InvokeMember(methodInfo.Name, BindingFlags.InvokeMethod, null, _decorated, args);
-                    OnAfterExecute(methodInfo);
+                    OnAfterExecute(new ProxyEventArgs(methodInfo, args));
                     return result;
                 }
                 catch (Exception e)
                 {
-                    OnErrorExecuting(methodInfo);
+                    OnErrorExecuting(new ProxyEventArgs(methodInfo, args));
                     return e.Message;
                 }
 

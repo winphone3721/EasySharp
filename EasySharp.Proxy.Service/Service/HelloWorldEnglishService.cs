@@ -13,11 +13,11 @@ namespace EasySharp.Proxy.Service.Service
 
         public string SayHelloWorld(Language language)
         {
-            if (language.Equals(Language.CN))
+            if (language.Equals(Language.EN))
             {
                 return "[English-Hello,World！]";
             }
-            return string.Empty;
+            return "这里是文英，其它语言无效！";
 
         }
     }
